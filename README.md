@@ -18,6 +18,6 @@ http://localhost:8080/register
 }
 ```
 * GET
-* ```
+```
 http://localhost:8080/hello
 ```
