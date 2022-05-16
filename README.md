@@ -21,3 +21,45 @@ http://localhost:8080/register
 ```
 http://localhost:8080/hello
 ```
+
+# Przypadki użycia
+1.	Logowanie użytkownika
+      * Given – użytkownik posiadający konto
+      *	When - użytkownik wprowadza login i hasło
+      *	Then – użytkownik dostaje dostęp do kolejnych endpointów
+      *	Then – użytkownik wprowadził błędne dane i nie przechodzi dalej
+2.	Rejstracja użytkownika
+      *	Given – nowy użytkownik chce się zalogować
+      *	When - użytkownik wprowadza login, hasło, email, nr_tel i kod paneli (jakiś identyfikator instalacji czy coś)
+      *	Then – użytkownik otrzymuje konto
+3.	Zapis licznika stanu licznika
+      *	Given – zalogowany użytkownik chce podać odczyt
+      *	When – zalogowany użytkownik wpisuje odczyt wyprodukowanego prącu
+      *	Then – odczyt zostaje zapisany i odliczony od rachunku
+4.	Sprawdzenie odczytów
+      *	Given – zalogowany użytkownik chce sprawdzić odczyty
+      *	When – zalogowany użytkownik pobiera odczyty
+      *	Then – odczyt zostaje zwrócone
+5.	Sprawdzenie faktur
+      *	Given – zalogowany użytkownik chce sprawdzić faktury
+      *	When – zalogowany użytkownik pobiera faktury
+      *	Then – faktury zostaje zwrócone
+6.	Zmiana ustawień konta
+      *	Given – zalogowany użytkownik chce zmienić ustawienie na koncie
+      *	When – zalogowany użytkownik wchodzi w zakładkę ustwienia
+      *	Then – zmienia ustawienia
+7.	Zmiana ustawień konta
+      *	Given – zalogowany użytkownik chce zmienić ustawienie na koncie
+      *	When – zalogowany użytkownik wchodzi w zakładkę ustwienia
+      *	Then – zmienia ustawienia
+8.	Wprowadzenie danych o instalacji
+      *	Given – zalogowany użytkownik chce dodać informacje o instalacji
+      *	When – zalogowany użytkownik wprowadza informacje
+      *	Then – ustawienia zostają zapisane
+10.	Wprowadzenie danych do instalacji
+       * Given – zalogowany użytkownik chce dodać informacje o instalacji
+       * When – zalogowany użytkownik wprowadza informacje
+       * Then – informacje zostają zapisane
+
+# Schemat bazy danych
+![alt text](https://github.com/LukaszMazurek/fotowoltaika/blob/master/docs/DatabaseSchema.jpg?raw=true)
