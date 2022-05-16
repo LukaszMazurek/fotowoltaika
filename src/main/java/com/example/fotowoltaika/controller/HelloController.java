@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(){
-        return "this is only test enpoint";
+        return "hello from protrctrd endpoint";
     }
 }

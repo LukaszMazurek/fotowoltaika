@@ -7,12 +7,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import java.util.Locale;
+
 @EnableWebSecurity
 public class WebSecurityConfig {
 
     private static final String[] WHITE_LIST_URLS = {
             "/hello",
-            "/register"
+            "/register",
+            "/verifyRegistration*",
+            "/resendVerifyToken*"
     };
 
     @Bean
