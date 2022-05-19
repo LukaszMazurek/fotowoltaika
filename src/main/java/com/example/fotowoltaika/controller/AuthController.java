@@ -81,12 +81,4 @@ public class AuthController {
 
     }
 
-    @PostMapping("/signout")
-    public ResponseEntity<?> logoutUser() {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                "", ""));
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new ResponseEntity<>("Sign out", HttpStatus.OK);
-    }
 }
