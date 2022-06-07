@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ImportResource;
 
 
 @SpringBootApplication
-@ImportResource("appConfig.xml")
-@EnableAutoConfiguration(exclude= HibernateJpaAutoConfiguration.class)
+//@ImportResource("appConfig.xml")
+//@EnableAutoConfiguration(exclude= HibernateJpaAutoConfiguration.class)
 public class FotowoltaikaApplication {
 
 	public static void main(String[] args) {
