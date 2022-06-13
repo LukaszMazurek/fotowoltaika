@@ -5,46 +5,26 @@ Setup:
 * używam mysql w wersji 8
 * utwórz bazę danych fotowoltaika
 * ustaw hasło do połaczenia z bazą w plik applicatio.properties na twoje hasło
+* na starcie ustawiany jest użytkownik z username defaultUser i hasłem defaultUser
 
 # przykłady
+## flow rejstracji z wykorzystanie JWT (json web tokens)
 * POST (rejstracja)
 ```
-http://localhost:8080/register
+http://localhost:8080/signup
 {
-    "firstName": "Bob",
-    "lastName": "Marley",
-    "email": "bob@marley.com",
-    "password": "bob123"
+    "username": "Joe",
+    "password": "Doe",
 }
 ```
-* POST (resetowanie hasło)
-```
-http://localhost:8080/resetPassword
-{
-    "email": "bob@marley.com",
-}
-response:
-adres do resetowania hasła przykład
-http://localhost:8080/savePassword?token=1b206ddd-4a6a-437a-ae0c-f978406af82c
-```
-* POST (ustawianie hasła)
-```
-http://localhost:8080/savePassword?token=1b206ddd-4a6a-437a-ae0c-f978406af82c
-{
-    "newPassword": "123"
-}
-response:
-wynik zapyatania w postaci widomości
-```
-* GET (aktywacja konta)
-```
-http://localhost:8080/resendVerifyToken?token=dc1c1644-e241-4999-8e3d-840589d33cb8
-token - jest to token który powstaje przy tworzeniu użytkowanika
-```
-* GET
-```
-http://localhost:8080/hello
-```
+![alt text](https://github.com/LukaszMazurek/fotowoltaika/blob/develop/docs/signup.jpg)
+* GET (test page przed zalogowaniem zwraca 403 - forbidden)
+![alt text](https://github.com/LukaszMazurek/fotowoltaika/blob/develop/docs/testPageBeforeLogin.jpg)
+* POST (logowanie pobieramy token z hedera - Authorization  po poprawnym zalogowanie)
+![alt text](https://github.com/LukaszMazurek/fotowoltaika/blob/develop/docs/loginWithToken.jpg)
+* GET (używamy tutaj Bearer Token wklejamy nasz token i możemy korzystać z endpointa)
+![alt text](https://github.com/LukaszMazurek/fotowoltaika/blob/develop/docs/toestWithTokenLogin.jpg)
+* Pozostałe przykłady używają hateosa 
 
 # Przypadki użycia
 1.	Logowanie użytkownika
@@ -72,18 +52,14 @@ http://localhost:8080/hello
     *	Given – zalogowany użytkownik chce zmienić ustawienie na koncie
     *	When – zalogowany użytkownik wchodzi w zakładkę ustwienia
     *	Then – zmienia ustawienia
-7.	Zmiana ustawień konta
-    *	Given – zalogowany użytkownik chce zmienić ustawienie na koncie
-    *	When – zalogowany użytkownik wchodzi w zakładkę ustwienia
-    *	Then – zmienia ustawienia
-8.	Wprowadzenie danych o instalacji
+7.	Wprowadzenie danych o instalacji
     *	Given – zalogowany użytkownik chce dodać informacje o instalacji
     *	When – zalogowany użytkownik wprowadza informacje
     *	Then – ustawienia zostają zapisane
-10.	Wprowadzenie danych do instalacji
+8.	Wprowadzenie danych do instalacji
     * Given – zalogowany użytkownik chce dodać informacje o instalacji
     * When – zalogowany użytkownik wprowadza informacje
     * Then – informacje zostają zapisane
 
 # Schemat bazy danych
-![alt text](https://github.com/LukaszMazurek/fotowoltaika/blob/master/docs/DatabaseSchema.jpg?raw=true)
+![alt text](https://github.com/LukaszMazurek/fotowoltaika/blob/develop/docs/DatabaseSchema.jpg)
