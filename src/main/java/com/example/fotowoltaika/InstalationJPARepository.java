@@ -2,6 +2,5 @@ package com.example.fotowoltaika;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-interface UserRepository extends JpaRepository<User, Long> {
-
+public interface InstalationJPARepository extends JpaRepository<Instalation,Long> {
 }

@@ -5,11 +5,11 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @SpringBootApplication
-//@ImportResource("appConfig.xml")
-//@EnableAutoConfiguration(exclude= HibernateJpaAutoConfiguration.class)
+//@EnableScheduling
 public class FotowoltaikaApplication {
 
 	public static void main(String[] args) {
