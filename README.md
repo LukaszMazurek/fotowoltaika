@@ -1,10 +1,10 @@
 # fotowoltaika
 Setup:
 * otwórz projekt w intelij
-* intelij powinien automatycznie dociągnąć zależności z poma jeżeli toge nie zrobi to trzeba to zrobić ręcznie https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+* intelij powinien automatycznie dociągnąć zależności z poma jeżeli tego nie zrobi to trzeba to zrobić ręcznie https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 * używam mysql w wersji 8
 * utwórz bazę danych fotowoltaika
-* ustaw hasło do połaczenia z bazą w plik applicatio.properties na twoje hasło
+* ustaw hasło do połaczenia z bazą w plik application.properties na twoje hasło
 * na starcie ustawiany jest użytkownik z username defaultUser i hasłem defaultUser
 
 # przykłady
