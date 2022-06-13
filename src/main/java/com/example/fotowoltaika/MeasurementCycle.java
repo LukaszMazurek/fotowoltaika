@@ -1,15 +1,15 @@
 package com.example.fotowoltaika;
 
+import com.example.fotowoltaika.domain.InstalationJPARepository;
+import com.example.fotowoltaika.domain.MeasurementJPARepository;
+import com.example.fotowoltaika.domain.User;
+import com.example.fotowoltaika.domain.UserJPARepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import jdk.jfr.StackTrace;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.model.CurrentWeather;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Component
 public class MeasurementCycle {

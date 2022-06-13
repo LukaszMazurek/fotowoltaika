@@ -1,5 +1,7 @@
-package com.example.fotowoltaika;
+package com.example.fotowoltaika.domain;
 
+import com.example.fotowoltaika.domain.Instalation;
+import com.example.fotowoltaika.domain.Settings;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
@@ -21,8 +23,24 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @Column(nullable = false, unique = true)
+    private String username;
+
     @Column(name = "password")
     private String password;
+
+    @Column(nullable = false)
+    private String role;
+
+    public User(String username, String encodedPassword, String role) {
+        this.username = username;
+        this.password = encodedPassword;
+        this.role = role;
+    }
+
+    public User() {
+
+    }
 
     public Settings getSettings() {
         return settings;
@@ -91,5 +109,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

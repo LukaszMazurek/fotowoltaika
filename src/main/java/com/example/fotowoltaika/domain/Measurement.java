@@ -1,4 +1,6 @@
-package com.example.fotowoltaika;
+package com.example.fotowoltaika.domain;
+
+import com.example.fotowoltaika.domain.Instalation;
 
 import javax.persistence.*;
 import java.util.Date;
