@@ -16,8 +16,8 @@ public class UserService {
         bCryptPasswordEncoder = new BCryptPasswordEncoder();
     }
 
-    public void signup(String username, String password) {
+    public void signup(String username, String password, String role, String firstName, String lastName, String email) {
         String encodedPassword = bCryptPasswordEncoder.encode(password);
-        userRepository.save(new User(username, encodedPassword, "USER"));
+        userRepository.save(new User(username, encodedPassword, role, firstName, lastName, email));
     }
 }

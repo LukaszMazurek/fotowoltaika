@@ -25,7 +25,12 @@ public class FotowoltaikaApplication {
 	@Bean
 	CommandLineRunner runner() {
 		return args -> {
-			userService.signup("defaultUser", "defaultUser");
+			userService.signup("admin",
+					"admin",
+					"ADMIN",
+					"dAdmin",
+					"dAdmin",
+					"admin@admin.com");
 		};
 	}
 

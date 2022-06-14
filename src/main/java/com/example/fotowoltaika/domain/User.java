@@ -23,7 +23,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
 
     @Column(name = "password")
@@ -32,10 +32,13 @@ public class User {
     @Column(nullable = false)
     private String role;
 
-    public User(String username, String encodedPassword, String role) {
+    public User(String username, String encodedPassword, String role, String firstName, String lastName, String email) {
         this.username = username;
         this.password = encodedPassword;
         this.role = role;
+        this.firstname = firstName;
+        this.secondname = lastName;
+        this.email = email;
     }
 
     public User() {

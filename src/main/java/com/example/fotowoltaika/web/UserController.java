@@ -19,7 +19,12 @@ public class UserController {
 
     @PostMapping("/signup")
     public HttpStatus signup(@RequestBody UserCredentialsDTO userCredentialsDTO){
-        userService.signup(userCredentialsDTO.getUsername(), userCredentialsDTO.getPassword());
+        userService.signup(userCredentialsDTO.getUsername(),
+                userCredentialsDTO.getPassword(),
+                "USER",
+                userCredentialsDTO.getFirstName(),
+                userCredentialsDTO.getSecondName(),
+                userCredentialsDTO.getEmail());
         return HttpStatus.OK;
     }
 
