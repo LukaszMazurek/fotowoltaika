@@ -11,6 +11,14 @@ public class Settings {
 
     private Long id;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Column(name="isautocalculated")
     private Boolean isAutoCalculated;
 

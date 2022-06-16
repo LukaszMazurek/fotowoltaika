@@ -1,7 +1,5 @@
 package com.example.fotowoltaika.domain;
 
-import com.example.fotowoltaika.domain.Instalation;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -21,10 +19,7 @@ public class Measurement {
     public void setId(Long id) {
         this.id = id;
     }
-    @ManyToOne(cascade =
-            {CascadeType.
-                    DETACH,CascadeType.MERGE,CascadeType.
-                    REFRESH})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="instalation_id")
     private Instalation instalation;
 

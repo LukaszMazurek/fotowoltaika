@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "c867d26b-7933-46df-9e76-92e761229f3e",
+		"name": "Fotowoltaika",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/signup",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"nazwaUzytkownika\",\r\n    \"password\":\"hasło\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"nazwaUzytkownika\",\r\n    \"password\":\"hasło\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/instalations/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/instalations/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"instalations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/instalations/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/instalations/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"instalations",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/instalations/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amountOfPanels\":1,\r\n    \"powerOfPanel\":50.3,\r\n    \"longtitude\":10.4,\r\n    \"latitude\":45.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/instalationList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"instalationList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/instalationList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amountOfPanels\":1,\r\n    \"powerOfPanel\":50.3,\r\n    \"longtitude\":10.4,\r\n    \"latitude\":45.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/instalationList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"instalationList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/instalationList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amountOfPanels\":1,\r\n    \"powerOfPanel\":50.3,\r\n    \"longtitude\":10.4,\r\n    \"latitude\":45.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/instalationList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"instalationList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/instalations/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/instalations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"instalations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/instalations/1/dailyMeasurement",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/instalations/1/dailyMeasurement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"instalations",
+						"1",
+						"dailyMeasurement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/instalations/2/measurement",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXp3YVV6eXRrb3duaWthIiwiZXhwIjoxNjU1NDkzODcxfQ.0AVwlKhrERwXOnp9nmd9-aV0e7TQeRL3YhX72lKVi2yn0bLil0eXPomHcE7QZrkluIHwfpej1ex6BpFLniNjyw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/instalations/2/measurement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"instalations",
+						"2",
+						"measurement"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

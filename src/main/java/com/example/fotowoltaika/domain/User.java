@@ -14,16 +14,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "firstname")
+   /* @Column(name = "firstname")
     private String firstname;
 
     @Column(name = "secondname")
     private String secondname;
 
     @Column(name = "email")
-    private String email;
+    private String email;*/
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
 
     @Column(name = "password")
@@ -32,15 +32,22 @@ public class User {
     @Column(nullable = false)
     private String role;
 
+    public User(String username, String encodedPassword, String role, String firstName, String lastName, String email) {
+        this.username = username;
+        this.password = encodedPassword;
+        this.role = role;
+        /*this.firstname = firstName;
+        this.secondname = lastName;
+        this.email = email;*/
+    }
+
     public User(String username, String encodedPassword, String role) {
         this.username = username;
         this.password = encodedPassword;
         this.role = role;
-    }
-
-    public User() {
 
     }
+    public User(){}
 
     public Settings getSettings() {
         return settings;
@@ -71,13 +78,13 @@ public class User {
                     REFRESH},fetch = FetchType.EAGER)
     private List<Instalation> instalationList;
 
-    public String getFirstname() {
+    /*public String getFirstname() {
         return firstname;
     }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
-    }
+    }*/
 
     public Long getId() {
         return id;
@@ -87,7 +94,7 @@ public class User {
         this.id = id;
     }
 
-    public String getSecondname() {
+    /*public String getSecondname() {
         return secondname;
     }
 
@@ -101,7 +108,7 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 
     public String getPassword() {
         return password;
