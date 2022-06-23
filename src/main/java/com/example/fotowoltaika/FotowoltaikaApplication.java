@@ -6,10 +6,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+import java.time.format.DateTimeFormatter;
 
 
 @SpringBootApplication
-//@EnableScheduling
+@EnableScheduling
 public class FotowoltaikaApplication {
 
 	private final UserService userService;
@@ -22,7 +25,7 @@ public class FotowoltaikaApplication {
 		SpringApplication.run(FotowoltaikaApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	CommandLineRunner runner() {
 		return args -> {
 			userService.signup("admin",
@@ -32,6 +35,11 @@ public class FotowoltaikaApplication {
 					"dAdmin",
 					"admin@admin.com");
 		};
+	}*/
+	@Bean
+	DateTimeFormatter dtf()
+	{
+		return DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	}
 
 }

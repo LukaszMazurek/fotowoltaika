@@ -1,0 +1,6 @@
+Ocena: 4
+Tabele bazy danych : 8
+HateAOS
+Endpointy : ok 10
+logowanie/autoryzacja
+procedury cykliczne na serwerze (co 30 sek zapytanie do serwera OpenWeather)

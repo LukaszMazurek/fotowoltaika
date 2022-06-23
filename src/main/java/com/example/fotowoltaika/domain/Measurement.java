@@ -1,8 +1,7 @@
 package com.example.fotowoltaika.domain;
 
-import com.example.fotowoltaika.domain.Instalation;
-
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,10 +20,7 @@ public class Measurement {
     public void setId(Long id) {
         this.id = id;
     }
-    @ManyToOne(cascade =
-            {CascadeType.
-                    DETACH,CascadeType.MERGE,CascadeType.
-                    REFRESH})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="instalation_id")
     private Instalation instalation;
 
@@ -47,14 +43,14 @@ public class Measurement {
         this.score = score;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
     @Column(name="date")
-    private Date date;
+    private LocalDate date;
 }

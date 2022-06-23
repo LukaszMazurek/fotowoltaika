@@ -1,6 +1,7 @@
 package com.example.fotowoltaika.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -14,8 +15,7 @@ public class Instalation {
 
     @ManyToOne(cascade =
             {CascadeType.
-                    DETACH,CascadeType.MERGE,CascadeType.
-                    REFRESH})
+                    ALL})
     @JoinColumn(name="user_id")
     private User user;
 
@@ -26,17 +26,55 @@ public class Instalation {
     private Integer amountOfPanels;
 
     @Column(name="longtitude")
-    private Integer longtitude;//długość geograficzna
+    private Double longtitude;//długość geograficzna
 
     @Column(name = "latitude")
-    private Integer latitude;//szerokość geograficzna
+    private Double latitude;//szerokość geograficzna
+
+    @Column(name="price")
+    private Double price;
+
+    @Column(name="instalation_date")
+    private LocalDate instalationDate;
+
+    public LocalDate getInstalationDate() {
+        return instalationDate;
+    }
+
+    public void setInstalationDate(LocalDate instalationDate) {
+        this.instalationDate = instalationDate;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     @OneToMany(mappedBy = "instalation",cascade =
             {CascadeType.
-                    DETACH,CascadeType.MERGE,CascadeType.
-                    PERSIST,CascadeType.
-                    REFRESH})
+                    ALL})
     private List<Measurement> measurement;
+
+    @OneToMany(mappedBy = "instalation",cascade =
+            {CascadeType.
+                    ALL})
+    private List<DailyMeasurement> dailyMeasurement;
+
+    public List<MonthlyMeasurement> getMonthlyMeasurement() {
+        return monthlyMeasurement;
+    }
+
+    public void setMonthlyMeasurement(List<MonthlyMeasurement> monthlyMeasurement) {
+        this.monthlyMeasurement = monthlyMeasurement;
+    }
+
+    @OneToMany(mappedBy = "instalation",cascade =
+            {CascadeType.
+                    ALL})
+    private List<MonthlyMeasurement> monthlyMeasurement;
 
     public List<Measurement> getMeasurement() {
         return measurement;
@@ -78,19 +116,27 @@ public class Instalation {
         this.amountOfPanels = amountOfPanels;
     }
 
-    public Integer getLongtitude() {
+    public Double getLongtitude() {
         return longtitude;
     }
 
-    public void setLongtitude(Integer longtitude) {
+    public void setLongtitude(Double longtitude) {
         this.longtitude = longtitude;
     }
 
-    public Integer getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Integer latitude) {
+    public List<DailyMeasurement> getDailyMeasurement() {
+        return dailyMeasurement;
+    }
+
+    public void setDailyMeasurement(List<DailyMeasurement> dailyMeasurement) {
+        this.dailyMeasurement = dailyMeasurement;
+    }
+
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 

@@ -1,15 +1,27 @@
 package com.example.fotowoltaika.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
-@Table(name="settings")
-public class Settings {
+@Table(name="predictedreturndate")
+public class PredictedReturnDate {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
+
+    @Column(name="predicted_date")
+    private LocalDate date;
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
     public User getUser() {
         return user;
@@ -19,12 +31,8 @@ public class Settings {
         this.user = user;
     }
 
-    @Column(name="isautocalculated")
-    private Boolean isAutoCalculated;
-
-    @OneToOne(mappedBy ="settings",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy ="predictedReturnDate",cascade = CascadeType.ALL)
     private User user;
-
     public Long getId() {
         return id;
     }
@@ -32,14 +40,4 @@ public class Settings {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Boolean getAutoCalculated() {
-        return isAutoCalculated;
-    }
-
-    public void setAutoCalculated(Boolean isautoCalculated) {
-        this.isAutoCalculated = isautoCalculated;
-    }
-
-
 }
