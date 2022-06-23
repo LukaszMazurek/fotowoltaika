@@ -1,7 +1,8 @@
-/*
-package com.example.fotowoltaika;
+
+package com.example.fotowoltaika.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,33 +13,22 @@ public class MonthlyMeasurement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="month")
-    private Integer month;
+    @Column(name="date")
+    private LocalDate date;
 
-    @Column(name="year")
-    private Integer year;
-
-    public Integer getMonth() {
-        return month;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setMonth(Integer month) {
-        this.month = month;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    public Long getMonthlysum() {
+    public Double getMonthlysum() {
         return monthlysum;
     }
 
-    public void setMonthlysum(Long monthlysum) {
+    public void setMonthlysum(Double monthlysum) {
         this.monthlysum = monthlysum;
     }
 
@@ -51,11 +41,9 @@ public class MonthlyMeasurement {
     }
 
     @Column(name="monthlysum")
-    private Long monthlysum;
+    private Double monthlysum;
 
-    @ManyToOne(cascade = {CascadeType.
-            DETACH,CascadeType.MERGE,CascadeType.
-            REFRESH})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="instalation_id")
     private Instalation instalation;
 
@@ -67,4 +55,4 @@ public class MonthlyMeasurement {
         this.id = id;
     }
 }
-*/
+

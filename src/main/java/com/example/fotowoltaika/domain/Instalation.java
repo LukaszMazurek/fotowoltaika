@@ -1,6 +1,7 @@
 package com.example.fotowoltaika.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -14,8 +15,7 @@ public class Instalation {
 
     @ManyToOne(cascade =
             {CascadeType.
-                    DETACH,CascadeType.MERGE,CascadeType.
-                    REFRESH})
+                    ALL})
     @JoinColumn(name="user_id")
     private User user;
 
@@ -31,6 +31,28 @@ public class Instalation {
     @Column(name = "latitude")
     private Double latitude;//szerokość geograficzna
 
+    @Column(name="price")
+    private Double price;
+
+    @Column(name="instalation_date")
+    private LocalDate instalationDate;
+
+    public LocalDate getInstalationDate() {
+        return instalationDate;
+    }
+
+    public void setInstalationDate(LocalDate instalationDate) {
+        this.instalationDate = instalationDate;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     @OneToMany(mappedBy = "instalation",cascade =
             {CascadeType.
                     ALL})
@@ -41,12 +63,18 @@ public class Instalation {
                     ALL})
     private List<DailyMeasurement> dailyMeasurement;
 
-    /*@OneToMany(mappedBy = "instalation",cascade =
+    public List<MonthlyMeasurement> getMonthlyMeasurement() {
+        return monthlyMeasurement;
+    }
+
+    public void setMonthlyMeasurement(List<MonthlyMeasurement> monthlyMeasurement) {
+        this.monthlyMeasurement = monthlyMeasurement;
+    }
+
+    @OneToMany(mappedBy = "instalation",cascade =
             {CascadeType.
-                    DETACH,CascadeType.MERGE,CascadeType.
-                    PERSIST,CascadeType.
-                    REFRESH})
-    private List<MonthlyMeasurement> monthlyMeasurement;*/
+                    ALL})
+    private List<MonthlyMeasurement> monthlyMeasurement;
 
     public List<Measurement> getMeasurement() {
         return measurement;

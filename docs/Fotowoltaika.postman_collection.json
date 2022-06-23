@@ -457,6 +457,311 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:8080/measurements",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/measurements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"measurements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/settingses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/settingses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"settingses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/bills",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bills",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bills"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/monthlyMeasurements",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/monthlyMeasurements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"monthlyMeasurements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/dailyMeasurements",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dailyMeasurements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dailyMeasurements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/predictedReturnDates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/predictedReturnDates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"predictedReturnDates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/settings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1/settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/settings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"autoCalculated\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/settings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZGFtX0tvd2Fsc2tpIiwiZXhwIjoxNjU2MDcwODc2fQ.49tSizIPT0H7ZMOe4i5BOo1QgFf1Ar-zRhijge6_popID3cpUKUJ7V-wmEGjy2RSlWZ5LfdtWHkwySRzz3dxnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"autoCalculated\":\"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/bills",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2022-04-05\",\r\n    \"energy\":200,\r\n    \"payment\":100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1/bills",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"bills"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

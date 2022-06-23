@@ -1,14 +1,14 @@
 package com.example.fotowoltaika.domain;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.web.bind.annotation.*;
-import org.json.*;
 
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Objects;
-
+//TODO Przepisać settingsy do usera []
 @RestController
 public class SettingsController {
     @Autowired
@@ -23,7 +23,7 @@ public class SettingsController {
         Boolean autoCalculated(String autocalculated);
     }
     @PostMapping("/users/{id}/settings")
-    public String addSettings(@PathVariable Long id, @RequestBody String requestBody )
+    public EntityModel<Settings> addSettings(@PathVariable Long id, @RequestBody String requestBody )
     {
         User user = userJPARepository.findById(id).get();
         JSONObject ja = new JSONObject(requestBody);
@@ -38,10 +38,13 @@ public class SettingsController {
         userJPARepository.save(user);
         System.out.println(user.getSettings().getId());
 
-        return "redirect:/users/"+id.toString()+"/settings/";
+        return EntityModel.of(user.getSettings(),
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(SettingsRESTController.class).one(id)).withSelfRel(),
+                Link.of("/settingses/").withRel("settings"),
+                Link.of("/users/"+id).withRel("user"));
     }
     @PutMapping("/users/{id}/settings")
-    public String updateSettings(@PathVariable Long id, @RequestBody String requestBody)
+    public EntityModel<Settings> updateSettings(@PathVariable Long id, @RequestBody String requestBody)
     {
         User user = userJPARepository.findById(id).get();
         JSONObject ja = new JSONObject(requestBody);
@@ -55,7 +58,10 @@ public class SettingsController {
         userJPARepository.save(user);
         System.out.println(user.getSettings().getId());
 
-        return "redirect:/users/"+id.toString()+"/settings/";
+        return EntityModel.of(user.getSettings(),
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(SettingsRESTController.class).one(id)).withSelfRel(),
+                Link.of("/settingses/").withRel("settings"),
+                Link.of("/users/"+id).withRel("user"));
     }
 
 }

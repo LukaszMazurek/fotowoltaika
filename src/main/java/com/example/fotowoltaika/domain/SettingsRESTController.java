@@ -26,7 +26,8 @@ public class SettingsRESTController {
         System.out.println(user.getSettings().getId()+"//Id");
         return EntityModel.of(user.getSettings(),
                 WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(SettingsRESTController.class).one(id)).withSelfRel(),
-                Link.of("http://localhost:8080/settingses/").withRel("settings"));
+                Link.of("/settingses/").withRel("settings"),
+                Link.of("/users/"+id).withRel("user"));
                 //WebMvcLinkBuilder.linkTo()//(WebMvcLinkBuilder.methodOn(SettingsRESTController.class).all()).withRel("employees"));
     }
 }

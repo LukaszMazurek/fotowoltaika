@@ -32,6 +32,13 @@ public class User {
     @Column(nullable = false)
     private String role;
 
+    @OneToMany(mappedBy = "user",cascade =
+            {CascadeType.
+                    DETACH,CascadeType.MERGE,CascadeType.
+                    PERSIST,CascadeType.
+                    REFRESH},fetch = FetchType.LAZY)
+    private List<Bill> bills;
+
     public User(String username, String encodedPassword, String role, String firstName, String lastName, String email) {
         this.username = username;
         this.password = encodedPassword;
@@ -45,6 +52,7 @@ public class User {
         this.username = username;
         this.password = encodedPassword;
         this.role = role;
+        this.predictedReturnDate = new PredictedReturnDate();
 
     }
     public User(){}
@@ -60,15 +68,45 @@ public class User {
     @OneToOne(cascade = CascadeType.
             ALL)
     @JoinColumn(name="user_settings_id")
-    @RestResource(path = "settings", rel="settings")
+    //@RestResource(path = "settings", rel="settings")
     private Settings settings;
 
+    public PredictedReturnDate getPredictedReturnDate() {
+        return predictedReturnDate;
+    }
+
+    public void setPredictedReturnDate(PredictedReturnDate predictedReturnDate) {
+        this.predictedReturnDate = predictedReturnDate;
+    }
+
+    @OneToOne(cascade = CascadeType.
+            ALL)
+    @JoinColumn(name="predicted_date")
+    //@RestResource(path = "pred", rel="settings")
+    private PredictedReturnDate predictedReturnDate;
+
     public List<Instalation> getInstalationList() {
-        return instalationList;
+        return instalations;
     }
 
     public void setInstalationList(List<Instalation> instalationList) {
-        this.instalationList = instalationList;
+        this.instalations = instalationList;
+    }
+
+    public List<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bill> bills) {
+        this.bills = bills;
+    }
+
+    public List<Instalation> getInstalations() {
+        return instalations;
+    }
+
+    public void setInstalations(List<Instalation> instalations) {
+        this.instalations = instalations;
     }
 
     @OneToMany(mappedBy = "user",cascade =
@@ -76,7 +114,7 @@ public class User {
                     DETACH,CascadeType.MERGE,CascadeType.
                     PERSIST,CascadeType.
                     REFRESH},fetch = FetchType.EAGER)
-    private List<Instalation> instalationList;
+    private List<Instalation> instalations;
 
     /*public String getFirstname() {
         return firstname;

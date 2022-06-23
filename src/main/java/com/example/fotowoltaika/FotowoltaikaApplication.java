@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.time.format.DateTimeFormatter;
+
 
 @SpringBootApplication
 @EnableScheduling
@@ -23,11 +25,16 @@ public class FotowoltaikaApplication {
 		SpringApplication.run(FotowoltaikaApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	CommandLineRunner runner() {
 		return args -> {
 			userService.signup("defaultUser", "defaultUser");
 		};
+	}*/
+	@Bean
+	DateTimeFormatter dtf()
+	{
+		return DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	}
 
 }

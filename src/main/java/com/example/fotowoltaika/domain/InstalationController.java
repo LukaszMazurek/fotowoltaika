@@ -8,6 +8,8 @@ import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +23,12 @@ public class InstalationController {
     MeasurementJPARepository measurementJPARepositorye;
     @Autowired
     DailyMeasurementsJPARepository dailyMeasurementsJPARepository;
-    @PostMapping("/users/{id}/instalationList")
-    public String addSettings(@PathVariable Long id, @RequestBody String requestBody )
+    @Autowired
+    DateTimeFormatter dtf;
+    @PostMapping("/users/{id}/instalation")
+    public EntityModel<Instalation> addSettings(@PathVariable Long id, @RequestBody String requestBody )
     {
+        System.out.println(requestBody);
         User user = userJPARepository.findById(id).get();
         JSONObject ja = new JSONObject(requestBody);
         Instalation instalation = new Instalation();
@@ -32,16 +37,30 @@ public class InstalationController {
         instalation.setPowerOfPanel(ja.getDouble("powerOfPanel"));
         instalation.setLatitude(ja.getDouble("latitude"));
         instalation.setLongtitude(ja.getDouble("longtitude"));
+        instalation.setPrice(ja.getDouble("price"));
+        instalation.setInstalationDate(LocalDate.parse(ja.getString("date"),dtf));
         instalationJPARepository.save(instalation);
         //System.out.println(settings.getAutoCalculated());
         user.getInstalationList().add(instalation);
         userJPARepository.save(user);
         System.out.println(user.getSettings().getId());
-
-        return "redirect:/users/"+id.toString()+"/settings/";
+        return EntityModel.of(instalation,
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(InstalationController.class).one(id)).withSelfRel(),
+                Link.of("/instalations/").withRel("instalations"),
+                Link.of("/users/"+instalation.getUser().getId()).withRel("user"));
     }
-    @GetMapping("/users/{id}/instalationList")
-    CollectionModel<EntityModel<Instalation>> one(@PathVariable Long id) {
+    @GetMapping("/instalations/{id}")
+
+    public EntityModel<Instalation> one(@PathVariable Long id)
+    {
+        Instalation instalation = instalationJPARepository.findById(id).get();
+        return EntityModel.of(instalation,
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(InstalationController.class).one(id)).withSelfRel(),
+                Link.of("/instalations/").withRel("instalations"),
+                Link.of("/users/"+instalation.getUser().getId()).withRel("user"));
+    }
+    @GetMapping("/users/{id}/instalation")
+    CollectionModel<EntityModel<Instalation>> list(@PathVariable Long id) {
 
         User user = userJPARepository.findById(id).get(); //
         List<EntityModel<Instalation>> instalacje = new ArrayList<EntityModel<Instalation>>();
@@ -85,6 +104,7 @@ public class InstalationController {
             System.out.println(dm.getId());
         }*/
         user.getInstalationList().remove(instalationToDelete);
+        System.out.println(user.getInstalationList());
         instalationJPARepository.delete(instalationToDelete);
         userJPARepository.save(user);
         List<EntityModel<Instalation>> instalacje = new ArrayList<EntityModel<Instalation>>();
@@ -94,6 +114,6 @@ public class InstalationController {
                     of("http://localhost:8080/instalations/"+install.getId())));
         }
         return CollectionModel.of(instalacje,
-                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(InstalationController.class).one(id)).withSelfRel());
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(InstalationController.class).deleteInstallation(id)).withSelfRel());
     }
 }

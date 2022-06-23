@@ -1,6 +1,7 @@
 package com.example.fotowoltaika.domain;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,7 @@ public class DailyMeasurement {
     private Long id;
 
     @Column(name="date")
-    private Date date;
+    private LocalDate date;
 
     @Column(name="dailysum")
     private double dailysum;
@@ -29,11 +30,11 @@ public class DailyMeasurement {
         this.id = id;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
